@@ -1,0 +1,62 @@
+body {
+    background-color: rgba(40, 40, 40, 0.9);
+    text-align: center;
+}
+
+h3 {
+    color: whitesmoke;
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.9)
+}
+
+.btn-primary {
+    background-color: rgba(40, 40, 40, 0.9);
+    border-color: rgba(40, 40, 40, 0.9);
+}
+
+.btn-danger {
+    background-color: rgba(125, 25, 25, 0.9);
+    border-color: rgba(125, 25, 25, 0.9);
+}
+
+.btn-success {
+    background-color: rgba(25, 125, 55, 0.9);
+    border-color: rgba(25, 125, 55, 0.9);
+}
+
+.clear, .history {
+    background-color: rgba(40, 40, 40, 0.9);
+}
+
+.clear:hover {
+    background-color: rgba(150, 25, 25, 0.9);
+    border-color: rgba(150, 25, 25, 0.9);
+}
+
+.btn-success:hover {
+    background-color: rgba(25, 175, 55, 0.9);
+}
+
+.card-body {
+    text-align: center;
+    margin: none;
+    padding: none;
+    height: 90px;
+}
+
+.calc-titles {
+    padding: 10px;
+    margin: 10px;
+    
+}
+
+.card-history {
+    height: 360px;
+}
+
+#history {
+    font-size: 18px;
+    padding: 10px;
+}

@@ -1,1 +1,4 @@
-# calculator
+# jQuery Calculator
+
+
+* This is a calculator
