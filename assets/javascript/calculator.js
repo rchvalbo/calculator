@@ -39,17 +39,17 @@ var calC = {
     this.firstNumber = parseInt(this.firstNumber)
       this.secondNumber = parseInt(this.secondNumber)
         if ( this.operator === "plus" ) {
-          equal = this.firstNumber + this.secondNumber;
+          this.equal = this.firstNumber + this.secondNumber;
         } else if ( this.operator === "minus" ) {
-          equal = this.firstNumber - this.secondNumber; 
+          this.equal = this.firstNumber - this.secondNumber; 
         } else if ( this.operator === "times" ) {
-          equal = this.firstNumber * this.secondNumber;
+          this.equal = this.firstNumber * this.secondNumber;
         } else if ( this.operator === "divide" ) {
-            equal = this.firstNumber / this.secondNumber;
+            this.equal = this.firstNumber / this.secondNumber;
         } else if ( this.operator === "power" ) {
-            equal = Math.pow(this.firstNumber, this.secondNumber);
+            this.equal = Math.pow(this.firstNumber, this.secondNumber);
         }
-        $("#result").text(equal)
+        $("#result").text(this.equal)
   },
 
   clearMe: function() {
