@@ -12,6 +12,7 @@ var calC = {
 
   setUp: function() {
     for ( let i = 0; i<10; i++ ) {
+      //What does this do? I didn't see where you actually used this array...
       this.calculator.push($("#button-" + i).val());
     }
   },
@@ -19,10 +20,10 @@ var calC = {
   numeroSelect: function(result) {
     if ( this.opSelect == false ) {
       this.firstNumber += result
-      $("#first-number").append(result)
+      // $("#first-number").append(result)
       } else {
         this.secondNumber += result
-      $("#second-number").append(result)
+      // $("#second-number").append(result)
       }
   },
     
@@ -31,9 +32,10 @@ var calC = {
     this.opSelect = true
   },
 
-  operatorAppend: function(result) {
-    $("#operator").append(result)
-  },
+
+  // operatorAppend: function(result) {
+  //   $("#operator").append(result)
+  // },
   
   getmeResults: function() {
     this.firstNumber = parseInt(this.firstNumber)
@@ -49,17 +51,17 @@ var calC = {
         } else if ( this.operator === "power" ) {
             this.equal = Math.pow(this.firstNumber, this.secondNumber);
         }
-        $("#result").text(this.equal)
+        // $("#result").text(this.equal)
   },
 
   clearMe: function() {
-    $("#history").append(this.firstNumber + " " + $("#operator").text() + " " + this.secondNumber + " = " + this.equal + "<br>");
+    // $("#history").append(this.firstNumber + " " + $("#operator").text() + " " + this.secondNumber + " = " + this.equal + "<br>");
     this.firstNumber = " ";
     this.secondNumber = " ";
     this.equal = 0;
     this.operator = " ";
     this.opSelect = false;
-    $("#first-number, #second-number, #operator, #result").empty();
+    // $("#first-number, #second-number, #operator, #result").empty();
   },
 
   clearHistory: function() {
@@ -75,37 +77,40 @@ $(document).ready(function() {
 });
 
 $(".number").click(function() {
-
   var selection1 = $(this).val();
   calC.numeroSelect(selection1);
-
+  calC.opSelect ? $("#second-number").text(calC.secondNumber) : $("#first-number").text(calC.firstNumber)
 });
 
 $(".operator").click(function() {
 
   var selection2 = $(this).val();
   calC.operatorSelect(selection2);
-
   var selection3 = $(this).text();
-  calC.operatorAppend(selection3);
-
+  $("#operator").text(selection3);
+  // calC.operatorAppend(selection3);
 });
 
 $(".equal").click(function() {
 
   calC.getmeResults();
+  $("#result").text(calC.equal);
 
 });
 
 $(".clear").click(function() {
 
+  $("#history").append(calC.firstNumber + " " + $("#operator").text() + " " + calC.secondNumber + " = " + calC.equal + "<br>");
+
   calC.clearMe();
 
+  $("#first-number, #second-number, #operator, #result").empty();
 });
 
 $(".history").click(function() {
 
-  calC.clearHistory();
+  //calC.clearHistory();
+  $("#history").empty();
 
 });
 
