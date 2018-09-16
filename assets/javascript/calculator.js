@@ -72,6 +72,7 @@ var calC = {
 
 $(document).ready(function() {
 
+  //What does this do? Nothing happens when I comment it out.
   calC.setUp();
 
 });
@@ -79,11 +80,14 @@ $(document).ready(function() {
 $(".number").click(function() {
   var selection1 = $(this).val();
   calC.numeroSelect(selection1);
+
+  /* Using the opSelect variable that you created in order to see if the operator was clicked. */
   calC.opSelect ? $("#second-number").text(calC.secondNumber) : $("#first-number").text(calC.firstNumber)
 });
 
 $(".operator").click(function() {
 
+  /* Commented Out the jQuery append. */
   var selection2 = $(this).val();
   calC.operatorSelect(selection2);
   var selection3 = $(this).text();
@@ -93,6 +97,7 @@ $(".operator").click(function() {
 
 $(".equal").click(function() {
 
+  // getMeResults sets the equal variable in the object. Knowing this you can use it here.
   calC.getmeResults();
   $("#result").text(calC.equal);
 
